@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  libPrimitiveUtils:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-02-06T15:20:32.39141967Z"
+    description: Useful utilities for working with helm templates.
+    digest: 51a10388ceef4911f7b9e48ffe33e424bc4cca479fa959924e3e566d35a22419
+    name: libPrimitiveUtils
+    type: library
+    urls:
+    - https://github.com/bvaughan-nexient/helm-primitive-utils/releases/download/libPrimitiveUtils-0.0.1/libPrimitiveUtils-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-02-06T15:20:32.391437553Z"
