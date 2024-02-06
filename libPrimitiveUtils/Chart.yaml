@@ -1,6 +1,6 @@
 apiVersion: v2
 name: libPrimitiveUtils
-description: Useful utilities for working with primitive helm templates.
+description: Useful utilities for working with helm templates.
 type: library
 version: 0.0.1
 appVersion: "0.0.1"
