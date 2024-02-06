@@ -1,0 +1,32 @@
+{{- /*
+libCommonUtils.merge.v1 will merge two YAML templates and output the result.
+This takes an array of three values:
+- the top context
+- the template name of the overrides (destination)
+- the template name of the base (source)
+*/}}
+{{- define "libCommonUtils.merge.v1" -}}
+{{- $top := first . -}}
+{{- $overrides := fromYaml (include (index . 1) $top) | default (dict ) -}}
+{{- $tpl := fromYaml (include (index . 2) $top) | default (dict ) -}}
+{{- toYaml (merge $overrides $tpl) -}}
+{{- end -}}
+
+{{- /*
+libCommonUtils.listEnvVars.v1 takes a list of key-value pairs and outputs a environment variable list suitable to be included in a pod definition.
+*/}}
+{{- define "libCommonUtils.listEnvVars.v1" -}}
+{{- range $key, $val := . }}
+- name: {{ $key }}
+  value: {{ $val }}
+{{- end -}}
+{{- end -}}
+
+{{- /*
+libCommonUtils.listValues.v1: takes a list of key-valuie pairs and outputs $key: $value
+*/}}
+{{- define "libCommonUtils.listValues.v1" -}}
+{{- range $key, $val := . }}
+{{ $key }}: {{ $val }} 
+{{- end -}}
+{{- end -}}
